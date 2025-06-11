@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Inter:wght@400;600&display=swap');
+
+/*
+ * =================================================================
+ * MEALKITZ.IO - REFACTORED STYLESHEET
+ * Mobile First & Desktop Friendly
+ * =================================================================
+ */
+
+/* ------------------------------------------------------------------
+ * VARIABLES & THEME
+ * ---------------------------------------------------------------- */
+:root {
+  --bs-primary: #00356B;
+  --bs-secondary: #FE4236;
+  --bs-dark: #343a40;
+  --bs-light: #FFFFFF;
+  --bs-body-bg: #F3F4F6;
+  --bs-body-color: #495057;
+  --font-headline: "Antonio", sans-serif;
+  --font-sub: "Inter", sans-serif; /* For body text */
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --border-radius: 0.5rem;
+  --bs-primary-rgb: 0, 53, 107;
+}
+
+/* ------------------------------------------------------------------
+ * BASE & RESET
+ * ---------------------------------------------------------------- */
+body {
+  background-color: var(--bs-body-bg);
+  font-family: var(--font-sub);
+  font-weight: var(--font-weight-normal);
+  color: var(--bs-body-color);
+  font-size: 175%; /* Base font size increased 1.75x */
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------
+ * TYPOGRAPHY (Mobile First)
+ * ---------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-headline);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+
+h1, .h1 { font-size: 2.5rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; }
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-normal);
+}
+
+/* ------------------------------------------------------------------
+ * HERO SECTION
+ * ---------------------------------------------------------------- */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sub);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* ------------------------------------------------------------------
+ * BUTTONS
+ * ---------------------------------------------------------------- */
+.btn {
+  font-family: var(--font-headline);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  min-height: 44px; /* Touch target */
+}
+
+.btn:hover {
+  filter: brightness(90%);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+}
+
+.btn-secondary {
+  background-color: var(--bs-secondary);
+  color: var(--bs-light);
+}
+
+.btn-outline-light {
+  color: var(--bs-light) !important;
+  border-color: var(--bs-light) !important;
+}
+
+.btn-outline-light:hover {
+  color: var(--bs-dark) !important;
+  background-color: var(--bs-light) !important;
+  border-color: var(--bs-light) !important;
+}
+
+/* ------------------------------------------------------------------
+ * CARDS
+ * ---------------------------------------------------------------- */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-card:hover {
+  @media (hover: hover) {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  }
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+.card-text, .card-subtitle {
+  font-size: 1rem;
+  font-family: var(--font-sub);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* ------------------------------------------------------------------
+ * FORMS
+ * ---------------------------------------------------------------- */
+.form-label {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+  border-radius: var(--border-radius);
+  border: 1px solid #ced4da;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--font-sub);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* ------------------------------------------------------------------
+ * NAVBAR
+ * ---------------------------------------------------------------- */
+.main-navbar {
+  background-color: var(--bs-dark) !important;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  padding: 0.5rem 1rem;
+  height: 70px; /* Set a fixed height */
+}
+
+.navbar-logo {
+  height: 10rem; /* 160px, 4x larger */
+  width: auto;
+  /* Use negative margins to allow the logo to overflow the navbar's fixed height */
+  margin-top: -45px;
+  margin-bottom: -45px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+.main-navbar .nav-link {
+  color: var(--bs-light);
+  text-transform: uppercase;
+  font-family: var(--font-headline);
+}
+.main-navbar .nav-link:hover {
+  color: var(--bs-secondary) !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* ------------------------------------------------------------------
+ * MISC COMPONENTS
+ * ---------------------------------------------------------------- */
+.brick-item {
+  background-color: var(--bs-secondary);
+  color: var(--bs-light);
+  padding: 0.675rem 1.35rem;
+  border-radius: 0.25rem;
+  font-size: 1.215rem;
+  display: inline-block;
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------------
+ * TABLET & DESKTOP BREAKPOINTS
+ * ---------------------------------------------------------------- */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  body {
+    font-size: 196.875%; /* 112.5% * 1.75, maintains scaling */
+  }
+  h1, .h1 { font-size: 3rem; }
+  h2, .h2 { font-size: 2.5rem; }
+  p { font-size: 1.125rem; }
+
+  .hero-title { font-size: 4.5rem; }
+  .hero-subtitle { font-size: 1.25rem; }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  h1, .h1 { font-size: 3.5rem; }
+  h2, .h2 { font-size: 3rem; }
+
+  .hero-title { font-size: 6rem; }
+  .hero-subtitle { font-size: 1.5rem; }
+
+  .btn {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    h1, .h1 { font-size: 4rem; }
+    .hero-title { font-size: 7rem; }
+}
+
+/* Improved accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card,
+  .hover-card,
+  .form-control,
+  .form-select {
+    transition: none;
+  }
+}
+
+.footer-text-reduced {
+  font-size: calc(1em / 1.5);
+}
+
+// WhatsApp Floating Action Button
+.whatsapp-fab {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.1);
+    color: #FFF;
+  }
+} 
