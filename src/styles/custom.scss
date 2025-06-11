@@ -126,6 +126,35 @@ p {
   border-color: var(--bs-light) !important;
 }
 
+/* Demo Button Specific Styling */
+.btn-demo {
+  background-color: var(--bs-secondary) !important;
+  border-color: var(--bs-secondary) !important;
+  color: white !important;
+  
+  &:hover {
+    background-color: var(--bs-secondary) !important;
+    border-color: var(--bs-secondary) !important;
+    color: white !important;
+    filter: brightness(110%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(254, 66, 54, 0.3) !important;
+  }
+  
+  &:focus {
+    background-color: var(--bs-secondary) !important;
+    border-color: var(--bs-secondary) !important;
+    color: white !important;
+    box-shadow: 0 0 0 0.2rem rgba(254, 66, 54, 0.25) !important;
+  }
+  
+  &:active {
+    background-color: var(--bs-secondary) !important;
+    border-color: var(--bs-secondary) !important;
+    color: white !important;
+  }
+}
+
 /* ------------------------------------------------------------------
  * CARDS
  * ---------------------------------------------------------------- */

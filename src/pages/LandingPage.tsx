@@ -8,13 +8,15 @@ import {
   ShoppingCart,
   BarChart3,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Play
 } from 'lucide-react';
 import { Whatsapp } from 'react-bootstrap-icons';
 import SimpleNavbar from '../components/SimpleNavbar';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../lib/translations';
+import { Link } from 'react-router-dom';
 
 // Mobile-first, desktop-friendly Landing page for Mealkitz
 export default function LandingPage() {
@@ -199,7 +201,7 @@ export default function LandingPage() {
         <div className="px-3 px-md-4">
           <h1 className="hero-title mb-3 mb-md-4">{t.heroTitle}</h1>
           <p className="hero-subtitle mb-4 mb-md-5">{t.heroSubtitle}</p>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
             <Button 
               variant="secondary" 
               className="hero-btn px-4 py-3"
@@ -207,6 +209,15 @@ export default function LandingPage() {
             >
               {t.heroButton}
             </Button>
+            <Link to="/business-steps" className="text-decoration-none">
+              <Button 
+                variant="outline-light" 
+                className="hero-btn btn-demo px-4 py-3 d-flex align-items-center justify-content-center"
+              >
+                <Play size={20} className="me-2" />
+                Ver Demo
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>
