@@ -201,7 +201,7 @@ export default function LandingPage() {
         <div className="px-3 px-md-4">
           <h1 className="hero-title mb-3 mb-md-4">{t.heroTitle}</h1>
           <p className="hero-subtitle mb-4 mb-md-5">{t.heroSubtitle}</p>
-          <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <div className="d-flex justify-content-center">
             <Button 
               variant="secondary" 
               className="hero-btn px-4 py-3"
@@ -209,15 +209,6 @@ export default function LandingPage() {
             >
               {t.heroButton}
             </Button>
-            <Link to="/business-steps" className="text-decoration-none">
-              <Button 
-                variant="outline-light" 
-                className="hero-btn btn-demo px-4 py-3 d-flex align-items-center justify-content-center"
-              >
-                <Play size={20} className="me-2" />
-                Ver Demo
-              </Button>
-            </Link>
           </div>
         </div>
       </Container>
@@ -271,6 +262,21 @@ export default function LandingPage() {
             </Col>
           ))}
         </Row>
+        
+        {/* Demo Button after ¿Qué hacemos? */}
+        <Row className="justify-content-center mt-4 mt-md-5">
+          <Col xs="auto">
+            <Link to="/business-steps" className="text-decoration-none">
+              <Button 
+                variant="outline-primary" 
+                className="btn-demo px-4 py-3 d-flex align-items-center justify-content-center"
+              >
+                <Play size={20} className="me-2" />
+                Ver Demo Interactivo
+              </Button>
+            </Link>
+          </Col>
+        </Row>
       </Container>
 
       {/* Mobile-First Ideal para */}
@@ -309,6 +315,21 @@ export default function LandingPage() {
               </div>
             </Col>
           ))}
+        </Row>
+        
+        {/* Demo Button after Pricing */}
+        <Row className="justify-content-center mt-4 mt-md-5">
+          <Col xs="auto">
+            <Link to="/business-steps" className="text-decoration-none">
+              <Button 
+                variant="outline-primary" 
+                className="btn-demo px-4 py-3 d-flex align-items-center justify-content-center"
+              >
+                <Play size={20} className="me-2" />
+                Ver Cómo Funciona
+              </Button>
+            </Link>
+          </Col>
         </Row>
       </Container>
 
