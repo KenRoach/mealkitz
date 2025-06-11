@@ -1,37 +1,43 @@
 import SimpleNavbar from '../components/SimpleNavbar';
 import Footer from '../components/Footer';
 import BusinessStepsAccordion from '../components/BusinessStepsAccordion';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default function BusinessStepsDemo() {
   return (
     <>
       <SimpleNavbar />
       
-      {/* Hero Section */}
-      <section 
-        className="py-5"
+      {/* Hero Section - Matching Landing Page Style */}
+      <Container 
+        fluid 
+        className="d-flex align-items-center justify-content-center text-center text-white py-5" 
         style={{ 
-          background: 'linear-gradient(135deg, #00356B 0%, #FE4236 100%)',
-          color: 'white'
+          minHeight: '70vh', 
+          backgroundColor: 'var(--bs-primary)'
         }}
       >
-        <Container>
-          <Row className="justify-content-center text-center">
-            <Col xs={12} lg={8}>
-              <h1 className="hero-title mb-4">
-                Cómo Funciona Mealkitz
-              </h1>
-              <p className="hero-subtitle mb-0">
-                Tres pasos simples para transformar tu idea en un negocio próspero
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+        <div className="px-3 px-md-4">
+          <h1 className="hero-title mb-3 mb-md-4">
+            Cómo Funciona Mealkitz
+          </h1>
+          <p className="hero-subtitle mb-4 mb-md-5">
+            Tres pasos simples para transformar tu idea en un negocio próspero
+          </p>
+          <div className="d-flex justify-content-center">
+            <Button 
+              variant="secondary" 
+              className="hero-btn px-4 py-3"
+              onClick={() => document.getElementById('business-steps')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Ver Pasos
+            </Button>
+          </div>
+        </div>
+      </Container>
 
       {/* Business Steps Accordion */}
-      <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
+      <section id="business-steps" className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
         <Container>
           <Row className="justify-content-center text-center mb-5">
             <Col xs={12} lg={8}>
@@ -60,7 +66,7 @@ export default function BusinessStepsDemo() {
                 Únete a la lista de espera y sé de los primeros en acceder a la plataforma completa de Mealkitz
               </p>
               <a 
-                href="https://wa.me/50760000000?text=Hola%2C%20quiero%20unirme%20a%20la%20lista%20de%20espera%20de%20Mealkitz" 
+                href="https://wa.me/50761008249?text=Hola%2C%20quiero%20unirme%20a%20la%20lista%20de%20espera%20de%20Mealkitz" 
                 className="btn btn-primary btn-lg"
                 target="_blank"
                 rel="noopener noreferrer"
