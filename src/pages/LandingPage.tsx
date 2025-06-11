@@ -1,51 +1,24 @@
-import React, { useState } from 'react';
-import {
-  Alert,
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  InputGroup,
-  ListGroup,
-  Row,
-} from 'react-bootstrap';
-import {
-  ShoppingCart,
-  Store,
-  PieChart,
-  ClipboardList,
-  HandCoins,
-  CreditCard,
-  LineChart,
-  Truck,
-  BrainCircuit,
-  BarChart,
-  DollarSign,
+import { useState } from 'react';
+import { Container, Row, Col, Card, Button, Form, ListGroup, Alert, InputGroup } from 'react-bootstrap';
+import { 
+  Smartphone, 
+  Truck, 
+  ClipboardList, 
   Server,
-  PlusCircle,
-  Users,
-  TrendingUp,
-  Percent,
-  ArrowRightLeft,
-  Sparkles,
-  Smartphone
+  ShoppingCart,
+  BarChart3,
+  CheckCircle,
+  ArrowRight
 } from 'lucide-react';
 import { Whatsapp } from 'react-bootstrap-icons';
+import SimpleNavbar from '../components/SimpleNavbar';
+import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../lib/translations';
 
-const idealForStatic = [
-  'Cocina oculta', 'Panaderías artesanales', 'Food trucks', 'Cafeterías boutique',
-  'Jugos y bebidas saludables', 'Catering profesional', 'Keto products', 'Heladerías',
-  'Fondas caseras', 'Cevicherías', 'Artesanía (pulseras, aretes, collares)', 'Charcuterías',
-  'Microcervecerías artesanales', 'Ventas de jabones y cremas',
-  'Carrito de comida', 'Pop-up shop', 'Catering comida casera', 'Almuerzos saludables', 'Tienda en línea'
-];
-
 // Mobile-first, desktop-friendly Landing page for Mealkitz
 export default function LandingPage() {
-  const { language } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
 
   /* ------------------------------------------------------------------
@@ -103,12 +76,12 @@ export default function LandingPage() {
     },
     {
       title: t.onlineStoreTitle,
-      icon: Store,
+      icon: Truck,
       subtitle: t.onlineStoreSubtitle
     },
     {
       title: t.dashboardTitle,
-      icon: PieChart,
+      icon: BarChart3,
       subtitle: t.dashboardSubtitle
     }
   ];
@@ -116,12 +89,12 @@ export default function LandingPage() {
   const proveedoresDetails = [
     {
       title: t.prov_espacios_produccion,
-      icon: Store,
+      icon: Truck,
       subtitle: t.prov_espacios_produccion_sub
     },
     {
       title: t.prov_acceso_equipos,
-      icon: HandCoins,
+      icon: CheckCircle,
       subtitle: t.prov_acceso_equipos_sub
     },
     {
@@ -139,7 +112,7 @@ export default function LandingPage() {
     },
     {
       title: t.papeleo_manejo_fiscal,
-      icon: DollarSign,
+      icon: CheckCircle,
       subtitle: t.papeleo_manejo_fiscal_sub
     },
     {
@@ -149,32 +122,26 @@ export default function LandingPage() {
     }
   ];
 
-  const howItWorksSteps = [
-    { text: t.howItWorksStep1, icon: ClipboardList },
-    { text: t.howItWorksStep2, icon: Store },
-    { text: t.howItWorksStep3, icon: HandCoins },
-  ];
-  
   const pricingDetails = [
     {
       title: t.pricing_no_fixed_costs,
       subtitle: t.pricing_no_fixed_costs_sub,
-      icon: Percent
+      icon: CheckCircle
     },
     {
       title: t.pricing_direct_payment,
       subtitle: t.pricing_direct_payment_sub,
-      icon: ArrowRightLeft
+      icon: ArrowRight
     },
     {
       title: t.pricing_additional_services,
       subtitle: t.pricing_additional_services_sub,
-      icon: Sparkles
+      icon: CheckCircle
     },
     {
       title: t.pricing_aligned_success,
       subtitle: t.pricing_aligned_success_sub,
-      icon: TrendingUp
+      icon: CheckCircle
     }
   ];
 
@@ -218,7 +185,9 @@ export default function LandingPage() {
    * ---------------------------------------------------------------- */
   return (
     <>
-      {/* Optimized Mobile-First Hero */}
+      <SimpleNavbar />
+      
+      {/* Hero Section */}
       <Container 
         fluid 
         className="d-flex align-items-center justify-content-center text-center text-white py-5" 
@@ -469,6 +438,8 @@ export default function LandingPage() {
       >
         <Whatsapp />
       </a>
+      
+      <Footer />
     </>
   );
 }
