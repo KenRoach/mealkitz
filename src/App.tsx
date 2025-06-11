@@ -4,6 +4,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import BusinessStepsDemo from './pages/BusinessStepsDemo';
 import DashboardLayout from './pages/DashboardLayout';
 import DashboardOverview from './pages/DashboardOverview';
 import POSPage from './pages/POSPage';
@@ -29,6 +30,7 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path="/business-steps" element={<BusinessStepsDemo />} />
               <Route path="/dashboard" element={
                 <PrivateRoute>
                   <DashboardLayout />
