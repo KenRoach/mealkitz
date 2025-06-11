@@ -32,6 +32,8 @@ import {
   Smartphone
 } from 'lucide-react';
 import { Whatsapp } from 'react-bootstrap-icons';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../lib/translations';
 
 const idealForStatic = [
   'Cocina oculta', 'Panaderías artesanales', 'Food trucks', 'Cafeterías boutique',
@@ -43,6 +45,9 @@ const idealForStatic = [
 
 // Mobile-first, desktop-friendly Landing page for Mealkitz
 export default function LandingPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   /* ------------------------------------------------------------------
    * Waitlist form state & handlers
    * ---------------------------------------------------------------- */
@@ -92,83 +97,83 @@ export default function LandingPage() {
    * ---------------------------------------------------------------- */
   const productSummary = [
     {
-      title: 'POS',
+      title: t.posTitle,
       icon: ShoppingCart,
-      subtitle: 'Factura y recibe pagos digitales'
+      subtitle: t.posSubtitle
     },
     {
-      title: 'Tienda en Línea',
+      title: t.onlineStoreTitle,
       icon: Store,
-      subtitle: 'Comparte tu catálogo y recibe pedidos'
+      subtitle: t.onlineStoreSubtitle
     },
     {
-      title: 'Dashboard',
+      title: t.dashboardTitle,
       icon: PieChart,
-      subtitle: 'Visualiza tus reportes de ventas'
+      subtitle: t.dashboardSubtitle
     }
   ];
 
   const proveedoresDetails = [
     {
-      title: 'Espacios de producción',
+      title: t.prov_espacios_produccion,
       icon: Store,
-      subtitle: 'Te conectamos con Cocinas y Espacios certificados para tu negocio'
+      subtitle: t.prov_espacios_produccion_sub
     },
     {
-      title: 'Acceso a equipos',
+      title: t.prov_acceso_equipos,
       icon: HandCoins,
-      subtitle: 'Te conectamos con equipos nuevos y usados para tu negocio'
+      subtitle: t.prov_acceso_equipos_sub
     },
     {
-      title: 'Proveedores',
+      title: t.prov_proveedores,
       icon: Truck,
-      subtitle: 'Red de proveedores confiables para tu negocio'
+      subtitle: t.prov_proveedores_sub
     }
   ];
 
   const papeleoDetails = [
     {
-      title: 'Estructura legal',
+      title: t.papeleo_estructura_legal,
       icon: ClipboardList,
-      subtitle: 'Tu negocio opera bajo nuestra razón social establecida'
+      subtitle: t.papeleo_estructura_legal_sub
     },
     {
-      title: 'Manejo fiscal',
+      title: t.papeleo_manejo_fiscal,
       icon: DollarSign,
-      subtitle: 'Nos encargamos de todas las obligaciones tributarias'
+      subtitle: t.papeleo_manejo_fiscal_sub
     },
     {
-      title: 'Cumplimiento normativo',
+      title: t.papeleo_cumplimiento_normativo,
       icon: Server,
-      subtitle: 'Garantizamos el cumplimiento de todas las regulaciones'
+      subtitle: t.papeleo_cumplimiento_normativo_sub
     }
   ];
 
   const howItWorksSteps = [
-    { text: 'Crea tu perfil, y registra tu negocio', icon: ClipboardList },
-    { text: 'Activa el App', icon: Store },
-    { text: 'Vende o accede a algunos de los servicios en Mealkitz', icon: HandCoins },
+    { text: t.howItWorksStep1, icon: ClipboardList },
+    { text: t.howItWorksStep2, icon: Store },
+    { text: t.howItWorksStep3, icon: HandCoins },
   ];
   
   const pricingDetails = [
     {
-      title: 'Sin costos fijos',
-      subtitle: 'Solo cobramos una comisión del 10% sobre cada venta. Si no vendes, no pagas.',
+      title: t.pricing_no_fixed_costs,
+      subtitle: t.pricing_no_fixed_costs_sub,
       icon: Percent
     },
     {
-      title: 'Pago directo a tu cuenta',
-      subtitle: 'Deducimos la comisión automáticamente y te transferimos el resto. Los pagos son semanales.',
+      title: t.pricing_direct_payment,
+      subtitle: t.pricing_direct_payment_sub,
       icon: ArrowRightLeft
     },
     {
-      title: 'Servicios Adicionales',
-      subtitle: 'Accede a marketing, analíticas y financiamiento. Paga solo por lo que usas.',
+      title: t.pricing_additional_services,
+      subtitle: t.pricing_additional_services_sub,
       icon: Sparkles
     },
     {
-      title: 'Alineados a tu éxito',
-      subtitle: 'Nuestro modelo de negocio está diseñado para crecer contigo. Tu éxito es nuestro éxito.',
+      title: t.pricing_aligned_success,
+      subtitle: t.pricing_aligned_success_sub,
       icon: TrendingUp
     }
   ];
@@ -187,22 +192,22 @@ export default function LandingPage() {
   const queHacemosCards = [
     {
       key: 'papeleo',
-      title: 'Sin papeleo',
-      text: 'Te ayudamos a arrancar sin papeleo: tu negocio opera bajo Mealkitz S.A.',
+      title: 'Abre tu negocio',
+      text: 'Te ayudamos a arrancar sin papeleo: tu negocio opera legalmente bajo Mealkitz S.A.',
       icon: ClipboardList,
       details: papeleoDetails
     },
     {
       key: 'proveedores',
-      title: 'Red de Proveedores',
-      text: 'Red de proveedores confiables para tu negocio.',
+      title: 'Accede a Proveedores',
+      text: 'Red de proveedores confiables para tu negocio con productos calidad y precios competitivos.',
       icon: Truck,
       details: proveedoresDetails
     },
     {
       key: 'product',
-      title: 'App completa',
-      text: 'Ponemos en tu mano una app para cobrar en el celular, tener tu tienda online y ver cuántas ventas haces.',
+      title: 'Gestiona tu Negocio',
+      text: 'Ponemos una app para cobrar en celular, tener tienda online y ver ventas.',
       icon: Smartphone,
       details: productSummary
     }
@@ -223,15 +228,15 @@ export default function LandingPage() {
         }}
       >
         <div className="px-3 px-md-4">
-          <h1 className="hero-title mb-3 mb-md-4">Lanza, Opera y Crece tu negocio</h1>
-          <p className="hero-subtitle mb-4 mb-md-5">Para emprendedores gastronómicos, artesanos y pequeños comerciantes que buscan lanzar y gestionar su propio negocio.</p>
+          <h1 className="hero-title mb-3 mb-md-4">{t.heroTitle}</h1>
+          <p className="hero-subtitle mb-4 mb-md-5">{t.heroSubtitle}</p>
           <div className="d-flex justify-content-center">
             <Button 
               variant="secondary" 
               className="hero-btn px-4 py-3"
               onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Únete a la Lista de Espera
+              {t.heroButton}
             </Button>
           </div>
         </div>
@@ -239,7 +244,7 @@ export default function LandingPage() {
 
       {/* Mobile-First ¿Qué hacemos? */}
       <Container className="py-4 py-md-5 py-lg-6">
-        <h2 className="text-center fw-bold mb-4 mb-md-5">¿Qué hacemos?</h2>
+        <h2 className="text-center fw-bold mb-4 mb-md-5">{t.productSummaryTitle}</h2>
         <Row className="g-3 g-md-4 mb-4 mb-md-5 justify-content-center">
           {queHacemosCards.map((card) => (
             <Col key={card.key} xs={12} md={6} lg={4}>
@@ -291,9 +296,9 @@ export default function LandingPage() {
       {/* Mobile-First Ideal para */}
       <Container fluid className="py-4 py-md-5 py-lg-6" style={{ backgroundColor: 'var(--bs-body-bg)' }}>
         <Container>
-          <h2 className="text-center fw-bold mb-4 mb-md-5">Ideal para</h2>
+          <h2 className="text-center fw-bold mb-4 mb-md-5">{t.idealForTitle}</h2>
           <div className="text-center">
-            {idealForStatic.map((item, index) => (
+            {t.idealForItems.map((item: string, index) => (
               <span 
                 key={index} 
                 className="brick-item d-inline-block me-2 mb-2 mb-md-3"
@@ -307,7 +312,7 @@ export default function LandingPage() {
       
       {/* Qué cobramos */}
       <Container className="py-4 py-md-5 py-lg-6">
-        <h2 className="text-center fw-bold mb-4 mb-md-5">¿Qué cobramos?</h2>
+        <h2 className="text-center fw-bold mb-4 mb-md-5">{t.pricingTitle}</h2>
         <Row className="g-3 g-md-4">
           {pricingDetails.map((item, index) => (
             <Col key={index} xs={12} md={6}>
