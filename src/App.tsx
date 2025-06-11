@@ -16,7 +16,7 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
 };
 
 function App() {
-  const basename = process.env.NODE_ENV === 'production' ? '/mealkitz' : '';
+  const basename = process.env.DEPLOY_TARGET === 'godaddy' ? '' : (process.env.NODE_ENV === 'production' ? '/mealkitz' : '');
   
   return (
     <LanguageProvider>

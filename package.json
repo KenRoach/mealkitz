@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:godaddy": "DEPLOY_TARGET=godaddy tsc -b && DEPLOY_TARGET=godaddy vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -24,7 +25,6 @@
     "react-bootstrap-icons": "^1.11.6",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",
-    "recharts": "^2.15.3",
     "sass": "^1.89.1"
   },
   "devDependencies": {
